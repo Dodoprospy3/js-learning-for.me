@@ -9,12 +9,21 @@
         <button onclick="
             calculateTotal();
             ">Calculate</button>
+        <p class="js-total-cost"></p>
 
         <script>
             function calculateTotal() {
-                const inputElement = document.querySelector('.js-cost-input');
+                let inputElement = document.querySelector('.js-cost-input');
+
+                if (cost < 40) {
+                    cost = cost + 10;
+                }
+
+                document.querySelector('.js-total-cost')
+                    .innerHTML = `$${cost}`;
             }
             
+
         </script>
     </body>
 </html>
