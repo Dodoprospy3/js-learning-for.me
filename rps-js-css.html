@@ -2,15 +2,31 @@
 <html>
     <head>
         <title>Rock Paper Scissors</title>
-        <style> 
+
+        <style>
             * {
                 cursor: url("icons8-cursor-32.svg") 0 0, auto;
+                user-select: none;
             }
 
             body {
                 background-color: rgb(25, 25, 25);
                 color: white;
                 font-family: Arial;
+                margin: 0;
+            }
+
+            .game {
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .buttons {
+                display: flex;
+                gap: 10px;
             }
 
             .play-button {
@@ -22,8 +38,6 @@
                 border-style: solid;
                 border-width: 4px;
                 border-color: white;
-                margin-right: 10px;
-                user-select: none;
             }
 
             .play-button:hover {
@@ -37,8 +51,7 @@
             .reset-score-button {
                 background-color: white;
                 border: none;
-                padding: 12px 22px 12px 22px;
-                user-select: none;
+                padding: 12px 22px;
             }
 
             .reset-score-button:hover {
@@ -52,71 +65,57 @@
     </head>
 
     <body>
-        <h1>Rock Paper Scissors</h1>
+        <div class="game">
 
-        <button class="play-button" onclick="
-            playGame('rock');
+            <h1>Rock Paper Scissors</h1>
 
-        ">🪨</button> 
+            <div class="buttons">
+                <button class="play-button" onclick="
+                    playGame('rock');
+                ">🪨</button>
 
-        <button class="play-button" onclick="
-            playGame('paper');
-        ">📰</button>
+                <button class="play-button" onclick="
+                    playGame('paper');
+                ">📰</button>
 
-        <button class="play-button" onclick="
-            playGame('scissors');
-        ">✂️</button>
+                <button class="play-button" onclick="
+                    playGame('scissors');
+                ">✂️</button>
+            </div>
 
-        <p class="js-result"></p>
+            <p class="js-result"></p>
 
-        <p class="js-moves"></p>
+            <p class="js-moves"></p>
 
-        <p class="js-score" onclick="
-            updateScoreElement();
-        "></p>
+            <p class="js-score" onclick="
+                updateScoreElement();
+            "></p>
 
-        <button class="reset-score-button" onclick="
-            score.wins = 0;
-            score.losses = 0;
-            score.ties = 0;
-            localStorage.removeItem('score');
-            updateScoreElement();
-            document.querySelector('.js-result').innerHTML = '';
-            document.querySelector('.js-moves').innerHTML = '';
+            <button class="reset-score-button" onclick="
+                score.wins = 0;
+                score.losses = 0;
+                score.ties = 0;
 
-/*
-            alert(`Your Score Was Reset. 
-Current Status: Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}.
-            `);
-*/
-            ">Reset Score</button>
+                localStorage.removeItem('score');
 
-        <!--<button onclick="
-            alert(scoreForAlert);
-            ">check score</button>-->
-        <!--<button onclick="
-            console.log(localStorage.getItem('message'));
-            ">check local storage</button>-->
+                updateScoreElement();
+
+                document.querySelector('.js-result').innerHTML = '';
+                document.querySelector('.js-moves').innerHTML = '';
+            ">
+                Reset Score
+            </button>
+
+        </div>
 
         <script>
             let score = JSON.parse(localStorage.getItem('score')) || {
-                    wins: 0,
-                    losses: 0,
-                    ties: 0
-                }
+                wins: 0,
+                losses: 0,
+                ties: 0
+            };
 
             updateScoreElement();
-
-
-/* uneeded if statement, leave for backup
-            if (!score) {
-                score = {
-                    wins: 0,
-                    losses: 0,
-                    ties: 0
-                };
-            }
-*/
 
             function playGame(playerMove) {
                 const computerMove = pickComputerMove();
@@ -168,13 +167,12 @@ Current Status: Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties
                     .innerHTML = `You ${playerMove} - Computer ${computerMove}`;
 
                 updateScoreElement();
-
             }
-
 
             function updateScoreElement() {
                 document.querySelector('.js-score')
-                    .innerHTML = `wins: ${score.wins}, losses: ${score.losses}, ties: ${score.ties}`
+                    .innerHTML =
+                    `wins: ${score.wins}, losses: ${score.losses}, ties: ${score.ties}`;
             }
 
             function pickComputerMove() {
