@@ -12,8 +12,10 @@
         <p class="js-total-cost"></p>
 
         <script>
+
             function calculateTotal() {
                 let inputElement = document.querySelector('.js-cost-input');
+                let cost = inputElement.value;
 
                 if (cost < 40) {
                     cost = cost + 10;
