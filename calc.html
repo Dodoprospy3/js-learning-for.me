@@ -1,29 +1,112 @@
 <!DOCTYPE html> 
 <html> 
     <head> 
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
         <title>Calculator</title>
         <style> 
+            * {
+                font-family: "Space Grotesk", Arial;
+            }
+
             .buttons-grid {
                 display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+            }
 
+            body {
+                margin: 0;
+            }
+
+            .container {
+                display: flex;
+                min-height: 100vh;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .calc-output {
+                display: block;
+                background-color: rgba(94, 94, 94, 0.25);
+                backdrop-filter: blur(20px) saturate(180%);
+                border: 1px solid rgba(255, 255, 255, 0.35);
+                color: black;
+                padding: 28px;
+                font-size: 26px;
+                border-radius: 50px;
+                height: 30px;
+                width: 385px;
+                margin-bottom: 8px;
+                font-weight: 700;
+                box-shadow:
+                    inset 0 1px 2px rgba(255, 255, 255, 0.7),
+                    inset 0 -1px 2px rgba(0, 0, 0, 0.15),
+                    0 8px 25px rgba(0, 0, 0, 0.2);
+            }
+
+            .number-button {
+                margin: 6px;
+                padding: 28px;
+                aspect-ratio: 1 / 1;
+                border-radius: 50%;
+                background-color: rgb(173, 121, 57);
+                font-size: 36px;
+                color: white;
+                border: none;
+                transition: box-shadow 0.1s;
+                backdrop-filter: blur(12px);
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                box-shadow:
+                    inset 3px 3px 5px rgba(255, 255, 255, 0.35),
+                    inset -3px -3px 6px rgba(0, 0, 0, 0.2),
+                    0 5px 15px rgba(0, 0, 0, 0.25);
+            }
+
+            .number-button:hover {
+                box-shadow:
+                    inset -3px -3px 5px rgba(255, 255, 255, 0.35),
+                    inset 3px 3px 6px rgba(0, 0, 0, 0.2);
+            }
+
+            .number-button:active {
+                filter: brightness(65%);
+            }
+
+            .grid-box {
+                display: block;
+            }
+
+            .operator-button {
+                background-color: rgb(36, 50, 87);
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                box-shadow:
+                    inset 3px 3px 5px rgba(255, 255, 255, 0.35),
+                    inset -3px -3px 6px rgba(0, 0, 0, 0.2),
+                    0 5px 15px rgba(0, 0, 0, 0.25);
             }
         </style>
     </head>
     <body> 
-        <div> 
-            <div class=""> 
-                placeholder
+        <div class="container"> 
+            <div class="calc-output js-output"> 
             </div>
-            <div class="buttons-grid"> 
-                <button>7</button>
-                <button>8</button>
-                <button>9</button>
-                <button>4</button>
-                <button>5</button>
-                <button>6</button>
-                <button>1</button>
-                <button>2</button>
-                <button>3</button>
+            <div class="grid-box">
+                <div class="buttons-grid"> 
+                    <button class="number-button">9</button>
+                    <button class="number-button">7</button>
+                    <button class="number-button">8</button>
+                    <button class="number-button operator-button">÷</button>
+                    <button class="number-button">6</button>
+                    <button class="number-button">5</button>
+                    <button class="number-button">4</button>
+                    <button class="number-button operator-button">×</button>
+                    <button class="number-button">3</button>
+                    <button class="number-button">2</button>
+                    <button class="number-button">1</button>
+                    <button class="number-button operator-button">-</button>
+                </div>
             </div>
         </div>
 
