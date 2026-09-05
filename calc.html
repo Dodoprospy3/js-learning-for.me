@@ -45,17 +45,20 @@
                 backdrop-filter: blur(20px) saturate(180%);
                 border: 1px solid rgba(255, 255, 255, 0.35);
                 color: black;
-                padding: 28px;
                 font-size: 26px;
                 border-radius: 50px;
-                height: 30px;
-                width: 385px;
+                height: 83px;
+                width: 435px;
                 margin-bottom: 8px;
                 font-weight: 700;
                 box-shadow:
                     inset 0 6px 8px rgba(255, 255, 255, 0.7),
                     inset 0 -6px 18px rgba(0, 0, 0, 0.15),
                     0 8px 25px rgba(0, 0, 0, 0.2);
+            }
+
+            .js-output {
+                margin-left: 38px;
             }
 
             .number-button {
@@ -113,7 +116,7 @@
 
             .command-button {
                 background-color: rgb(36, 50, 87);
-                width: 225px;
+                width: 214px;
                 border-radius: 90px;
                 grid-column: span 2;
                 border: 1px solid rgba(255, 255, 255, 0.3);
@@ -126,32 +129,78 @@
     </head>
     <body> 
         <div class="container"> 
-            <div class="calc-output js-output"> 
+            <div class="calc-output"> 
+                <p class="js-output"></p>
             </div>
             <div class="grid-box">
                 <div class="buttons-grid"> 
-                    <button class="number-button">9</button>
-                    <button class="number-button">7</button>
-                    <button class="number-button">8</button>
-                    <button class="number-button operator-button">÷</button>
-                    <button class="number-button">6</button>
-                    <button class="number-button">5</button>
-                    <button class="number-button">4</button>
-                    <button class="number-button operator-button">×</button>
-                    <button class="number-button">3</button>
-                    <button class="number-button">2</button>
-                    <button class="number-button">1</button>
-                    <button class="number-button operator-button">-</button>
-                    <button class="number-button command-button">=</button>
-                    <button class="number-button command-button">AC</button>
+                    <button onclick="
+                        document.querySelector('.js-output').innerHTML += '9'; 
+                        
+                    " class="number-button">9</button>
+
+                    <button onclick="
+                        document.querySelector('.js-output').innerHTML += '7'; 
+                    " class="number-button">7</button>
+
+                    <button onclick="
+                        document.querySelector('.js-output').innerHTML += '8'; 
+                    " class="number-button">8</button>
+
+                    <button onclick="
+                        document.querySelector('.js-output').innerHTML += ' ÷ '; 
+                    " class="number-button operator-button">÷</button>
+
+                    <button onclick="
+                        document.querySelector('.js-output').innerHTML += '6'; 
+                    " class="number-button">6</button>
+
+                    <button onclick="
+                        document.querySelector('.js-output').innerHTML += '5'; 
+                    " class="number-button">5</button>
+
+                    <button onclick="
+                        document.querySelector('.js-output').innerHTML += '4'; 
+                    " class="number-button">4</button>
+
+                    <button onclick="
+                        document.querySelector('.js-output').innerHTML += ' × '; 
+                    " class="number-button operator-button">×</button>
+
+                    <button onclick="
+                        document.querySelector('.js-output').innerHTML += '3'; 
+                    " class="number-button">3</button>
+
+                    <button onclick="
+                        document.querySelector('.js-output').innerHTML += '2'; 
+                    " class="number-button">2</button>
+
+                    <button onclick="
+                        document.querySelector('.js-output').innerHTML += '1'; 
+                    " class="number-button js-1">1</button>
+
+                    <button onclick="
+                        document.querySelector('.js-output').innerHTML += ' - '; 
+                    " class="number-button operator-button">-</button>
+
+                    <button onclick="
+                        
+                    " class="number-button command-button">=</button>
+
+                    <button onclick="
+                        document.querySelector('.js-output').innerHTML = ''; 
+                    " class="number-button command-button">AC</button>
                 </div>
             </div>
         </div>
-
-
-
-
         <script> 
+            document.querySelector('.js-output').innerHTML = '';
+
+            function input() {
+                const outputElement = document.querySelector('.js-output').innerHTML;
+                console.log(outputElement);
+            }
+
         </script>
     </body>
 </html>
