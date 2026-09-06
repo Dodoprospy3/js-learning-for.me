@@ -51,6 +51,7 @@
                 width: 435px;
                 margin-bottom: 8px;
                 font-weight: 700;
+                white-space: nowrap;
                 box-shadow:
                     inset 0 6px 8px rgba(255, 255, 255, 0.7),
                     inset 0 -6px 18px rgba(0, 0, 0, 0.15),
@@ -59,6 +60,7 @@
 
             .js-output {
                 margin-left: 38px;
+                white-space: nowrap;
             }
 
             .number-button {
@@ -125,6 +127,11 @@
                     inset -3px -3px 6px rgba(0, 0, 0, 0.2),
                     0 5px 15px rgba(0, 0, 0, 0.25);
             }
+
+            .short-num-button {
+                grid-column: span 1;
+                width: 102px;
+            }
         </style>
     </head>
     <body> 
@@ -135,70 +142,112 @@
             <div class="grid-box">
                 <div class="buttons-grid"> 
                     <button onclick="
-                        document.querySelector('.js-output').innerHTML += '9'; 
-                        
+                        inputArray.push(9);
                     " class="number-button">9</button>
 
+
+
                     <button onclick="
-                        document.querySelector('.js-output').innerHTML += '7'; 
+                        inputArray.push(7);
                     " class="number-button">7</button>
 
+
+
                     <button onclick="
-                        document.querySelector('.js-output').innerHTML += '8'; 
+                        inputArray.push(8);
                     " class="number-button">8</button>
 
+
+
                     <button onclick="
-                        document.querySelector('.js-output').innerHTML += ' ÷ '; 
+                        inputArray.push('/');
                     " class="number-button operator-button">÷</button>
 
+
+
                     <button onclick="
-                        document.querySelector('.js-output').innerHTML += '6'; 
+                        inputArray.push(6);
                     " class="number-button">6</button>
 
+
+
                     <button onclick="
-                        document.querySelector('.js-output').innerHTML += '5'; 
+                        inputArray.push(5);
                     " class="number-button">5</button>
 
+
+
                     <button onclick="
-                        document.querySelector('.js-output').innerHTML += '4'; 
+                        inputArray.push(4);
                     " class="number-button">4</button>
 
+
+
                     <button onclick="
-                        document.querySelector('.js-output').innerHTML += ' × '; 
+                        inputArray.push('*');
                     " class="number-button operator-button">×</button>
 
+
+
                     <button onclick="
-                        document.querySelector('.js-output').innerHTML += '3'; 
+                        inputArray.push(3);
                     " class="number-button">3</button>
 
+
+
                     <button onclick="
-                        document.querySelector('.js-output').innerHTML += '2'; 
+                        inputArray.push(2);
                     " class="number-button">2</button>
 
+
+
                     <button onclick="
-                        document.querySelector('.js-output').innerHTML += '1'; 
+                        inputArray.push(1);
                     " class="number-button js-1">1</button>
 
-                    <button onclick="
-                        document.querySelector('.js-output').innerHTML += ' - '; 
-                    " class="number-button operator-button">-</button>
+
 
                     <button onclick="
-                        
+                        inputArray.push('-');
+                    " class="number-button operator-button">-</button>
+                    
+
+
+                    <button onclick="
+                        inputArray.push('=');
                     " class="number-button command-button">=</button>
 
+
+
                     <button onclick="
-                        document.querySelector('.js-output').innerHTML = ''; 
-                    " class="number-button command-button">AC</button>
+
+                    " class="number-button command-button short-num-button">AC</button>
+
+
+
+                    <button onclick="
+                        " class="command-button short-num-button number-button">+</button>
+
+                     
+
+                    <button onclick="
+                        console.log(inputArray);
+                        ">log inputArray</button>
                 </div>
             </div>
         </div>
         <script> 
-            document.querySelector('.js-output').innerHTML = '';
 
-            function input() {
-                const outputElement = document.querySelector('.js-output').innerHTML;
-                console.log(outputElement);
+            const inputArray = [];
+
+            function calculate() {
+                if (typeof inputArray[0] === "number") {
+
+                }
+            }
+
+            function calculation() {
+                inputArray(0)
             }
 
         </script>
