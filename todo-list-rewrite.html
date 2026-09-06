@@ -1,0 +1,26 @@
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        <title>TODO List ReWrite</title>
+    </head>
+    <body> 
+        <h2>Todo List</h2>
+
+        <input class="js-todo-input" placeholder="Add Task">
+
+        <button onclick="
+                updateTodoArray();
+            ">Add</button>
+
+        <script> 
+            const todoList = [];
+            let newTask =  '';
+            
+            function updateTodoArray() {
+                let inputElement = document.querySelector('.js-cost-input');
+                newTask = inputElement;
+                console.log(newTask);
+            }
+        </script>
+    </body>
+</html>
