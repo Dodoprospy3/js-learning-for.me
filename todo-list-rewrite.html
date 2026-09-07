@@ -10,16 +10,32 @@
 
         <button onclick="
                 updateTodoArray();
+                renderTodoList();
             ">Add</button>
+        <div class="js-todo-visual-list"></div>
 
         <script> 
             const todoList = [];
             let newTask =  '';
             
             function updateTodoArray() {
-                let inputElement = document.querySelector('.js-cost-input');
-                newTask = inputElement;
-                console.log(newTask);
+                let inputElement = document.querySelector('.js-todo-input');
+                newTask = inputElement.value;
+                todoList.push(newTask);
+                console.log(todoList);
+            }
+
+
+            function renderTodoList() {
+                let todoListHTML = '';
+                const outputElement = document.querySelector('.js-todo-visual-list');
+                const todoList = outputElement.innerHTML;
+
+                for (i = 0; i < todoList.length; i++) {
+                    let renderedHTML = `<p>${todo}</p>`;
+                    todoListHTML = renderedHTML++;
+                    console.log(renderedHTML);
+                } 
             }
         </script>
     </body>
