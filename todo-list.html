@@ -1,21 +1,107 @@
 <!DOCTYPE html> 
 <html> 
     <head> 
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
         <title>TODO List</title>
         <style> 
-        </style>
+            * {
+                font-family: JetBrains Mono, Arial;
+            }
+
+            body {
+                user-select: none;
+            }
+
+            .header {
+                font-style: oblique;
+                font-variant:  small-caps;
+            }
+
+            .todo-date-input,
+            .todo-input {
+                width: 267px;
+                height: 37px;
+                padding-left: 12px;
+            }
+
+            .todo-date-input {
+                width: 115px;
+                padding-right: 12px;
+            }
+
+            .add-button {
+                margin-left: 6px;
+                color: white;
+                background-color: rgb(38, 158, 71);
+                padding: 11.5px;
+                border-radius: 2.7px;
+                border: none;
+                padding-right:30px;
+                padding-left:30px;
+                margin-bottom: 0px;
+                margin-top: 0px;
+            }
+
+            .add-button:hover {
+                box-shadow: 0px 4px 8px 0px rgba(1, 1, 1,  0.7);
+            }
+
+            .add-button:active {
+                filter: brightness(60%);
+            }
+
+            .list-items {
+                display: flex;
+                flex-direction: column;
+                width: 534px;
+                margin-bottom: 0px;
+                margin-top: 0px;
+            }
+
+            .list-items p {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 12px;
+                margin-top: 12px;
+            }
+
+            .del-button {
+                margin-left: 6px;
+                color: white;
+                background-color: darkred;
+                padding: 11.5px;
+                border-radius: 2.7px;
+                border: none;
+                /*padding-right:30px;
+                padding-left:30px;*/
+                width: 82px;
+                margin-bottom: 0px;
+                margin-top: 0px;
+            }
+
+            .del-button:hover {
+                box-shadow: 0px 4px 8px 0px rgba(1, 1, 1,  0.7);
+            }
+
+            .del-button:active {
+                opacity: 60%;
+            }
+            </style>
     </head>
     <body> 
-        <p>TODO List Practice 1</p>
+        <h1 class="header">Todo List Practice</h1>
 
-        <input class="js-name-input" placeholder="Todo name">
-        <input class="js-due-date-input" type="date">
+        <input class="js-name-input todo-input" placeholder="Todo name">
+        <input class="js-due-date-input todo-date-input" type="date">
 
-        <button onclick="
+        <button class="add-button" onclick="
             addTodo();
         ">Add</button>
 
-        <div class="js-todo-list"></div>
+        <div class="js-todo-list list-items"></div>
 
         <script> 
             const todoList = [{
@@ -39,7 +125,7 @@
 
                     const html = `<p> ${name} ${dueDate} <button onclick="
                         todoList.splice(${i}, 1); renderTodoList();
-                    ">Delete</button> </p>`;
+                    " class="del-button">Delete</button> </p>`;
                     todoListHTML += html;
                 } 
 
