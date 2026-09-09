@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JSON</title>
+    </head>
+
+    <body>
+
+        <script>
+            const user = {
+                name: 'Alex',
+                age: 17
+            };
+
+            const json = JSON.stringify(user);
+            console.log(json);
+
+            const object = JSON.parse(json);
+            console.log(object.name);
+        </script>
+
+    </body>
+</html>
