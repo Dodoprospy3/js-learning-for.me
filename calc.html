@@ -142,79 +142,79 @@
             <div class="grid-box">
                 <div class="buttons-grid"> 
                     <button onclick="
-                        inputArray.push(9);
+                        input1 += '9';
                     " class="number-button">9</button>
 
 
 
                     <button onclick="
-                        inputArray.push(7);
+
                     " class="number-button">7</button>
 
 
 
                     <button onclick="
-                        inputArray.push(8);
+
                     " class="number-button">8</button>
 
 
 
                     <button onclick="
-                        inputArray.push('/');
+
                     " class="number-button operator-button">÷</button>
 
 
 
                     <button onclick="
-                        inputArray.push(6);
+
                     " class="number-button">6</button>
 
 
 
                     <button onclick="
-                        inputArray.push(5);
+
                     " class="number-button">5</button>
 
 
 
                     <button onclick="
-                        inputArray.push(4);
+
                     " class="number-button">4</button>
 
 
 
                     <button onclick="
-                        inputArray.push('*');
+
                     " class="number-button operator-button">×</button>
 
 
 
                     <button onclick="
-                        inputArray.push(3);
+
                     " class="number-button">3</button>
 
 
 
                     <button onclick="
-                        inputArray.push(2);
+
                     " class="number-button">2</button>
 
 
 
                     <button onclick="
-                        inputArray.push(1);
+                        
                     " class="number-button js-1">1</button>
 
 
 
                     <button onclick="
-                        inputArray.push('-');
+
                     " class="number-button operator-button">-</button>
                     
 
 
                     <button onclick="
-                        inputArray.push('=');
+
                     " class="number-button command-button">=</button>
 
 
@@ -229,27 +229,23 @@
                         " class="command-button short-num-button number-button">+</button>
 
                      
-
                     <button onclick="
-                        console.log(inputArray);
+                        console.log(input1);
+                        console.log(input2);
+                        console.log(operation);
                         ">log inputArray</button>
                 </div>
             </div>
         </div>
         <script> 
 
-            const inputArray = [];
-
-            function calculate() {
-                if (typeof inputArray[0] === "number") {
-
-                }
-            }
-
-            function calculation() {
-                inputArray(0)
-            }
-
+            let input1 = '';
+            let operation = '';
+            let input2 = '';
+            
+              
+                
+                
         </script>
     </body>
 </html>

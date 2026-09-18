@@ -1,0 +1,45 @@
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        <title>StopWatch</title>
+        <style> 
+            button {
+                display: block;
+                margin-top: 8px;
+            }
+
+            div {
+                border-style: inset;
+                display: inline-block;
+                width: 110px;
+                height: 50px;
+            }
+        </style>
+    </head>
+
+    <body> 
+        <div></div>
+        <button onclick="
+                let stoper = 'start';
+                if (stoper === 'start') {
+                    while (stoper === 'start') {
+                        time += 1;
+                        console.log(time);
+                    }
+                }
+            ">Start</button>
+
+
+        <button onclick="
+                let stoper = 'stop';
+            ">Stop</button>
+
+
+        <button>Clear</button>
+        <script> 
+            
+            let time = 0;
+            
+        </script>
+    </body>
+</html>
